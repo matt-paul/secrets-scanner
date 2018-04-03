@@ -11,7 +11,7 @@ Here we are extending git-secrets to auto setup to a predetermined specification
  * [Adding Git Secrets to your project](#adding-git-secrets-to-your-project)
  * [Setting up to scan](#setting-up-to-scan)
  * [Scanning for secrets](#scanning-for-secrets)
- * [Adding patterns, allowed patterns and allowed literals](#Adding-patterns-allowed-patterns-and-allowed-literals)
+ * [Adding patterns, allowed patterns and allowed literals](#adding-patterns-allowed-patterns-and-allowed-literals)
 
 
 ## Getting Git Secrets
