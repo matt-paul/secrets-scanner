@@ -1,5 +1,10 @@
-PATTERNS=
-ALLOWED=@font-face{.*} password test test-new
+PATTERNS=pass
+ALLOWED=@font-face{.*}\
+password\
+test\
+test-new
+LITERALS=passwords\
+literal
 
 # color output
 NO_COLOR=\033[0m
@@ -17,21 +22,39 @@ PRINT_ERROR = printf "$(ERROR_COLOR)$@ $(ERROR_STRING)\n" | $(AWK_CMD) && printf
 PRINT_WARNING = printf "$(WARN_COLOR)$@ $(WARN_STRING)\n" | $(AWK_CMD) && $(PRINT_LINE)
 PRINT_OK = printf "$(OK_COLOR)$@ $(OK_STRING)\n" | $(AWK_CMD) && $(PRINT_LINE)
 
-setup-aws:
-	@git secrets --register-aws || echo "SETUP ALREADY DONE"
-	@$(PRINT_OK)
-	
-add-patterns:
-	@$(foreach var,$(PATTERNS),git secrets --add $(var)\
-	&& echo "$(var) HAS BEEN ADDED"\
-	|| echo "$(var) ALREADY ADDED";)
-	@$(PRINT_OK)
-	
-add-allowed:
-	@$(foreach var,$(ALLOWED),git secrets --add -a $(var)\
-	&& echo "$(var) HAS BEEN ADDED"\
-	|| echo "$(var) ALREADY ADDED";)
-	@$(PRINT_OK)
+full-setup:
+	@$(MAKE) setup-aws
+	@$(MAKE) add-patterns
+	@$(MAKE) add-allowed
+	@$(MAKE) add-literals
 
-list:
-	@git secrets --list
+setup-aws: ../.git/config
+	@cd .. && git secrets --register-aws || echo "SETUP ALREADY DONE"
+	@$(PRINT_OK)
+	
+add-patterns: ../.git/config
+ifdef PATTERNS
+	@cd .. && $(foreach var,$(PATTERNS),git secrets --add $(var)\
+	&& echo "$(var) HAS BEEN ADDED"\
+	|| echo "$(var) ALREADY ADDED";)
+	@$(PRINT_OK)
+endif
+	
+add-allowed: ../.git/config
+ifdef ALLOWED
+	@cd .. && $(foreach var,$(ALLOWED),git secrets --add -a $(var)\
+	&& echo "$(var) HAS BEEN ADDED"\
+	|| echo "$(var) ALREADY ADDED";)
+	@$(PRINT_OK)
+endif
+
+add-literals: ../.git/config
+ifdef LITERALS
+	@cd .. && $(foreach var,$(LITERALS),git secrets --add -a --literal $(var)\
+	&& echo "$(var) HAS BEEN ADDED"\
+	|| echo "$(var) ALREADY ADDED";)
+	@$(PRINT_OK)
+endif
+
+list: ../.git/config
+	@cd .. && git secrets --list
