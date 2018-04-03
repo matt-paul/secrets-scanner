@@ -2,7 +2,7 @@ PATTERNS=pass
 ALLOWED=@font-face{.*}\
 password\
 test\
-test-new
+test-pull
 LITERALS=passwords\
 literal
 
@@ -22,7 +22,7 @@ PRINT_ERROR = printf "$(ERROR_COLOR)$@ $(ERROR_STRING)\n" | $(AWK_CMD) && printf
 PRINT_WARNING = printf "$(WARN_COLOR)$@ $(WARN_STRING)\n" | $(AWK_CMD) && $(PRINT_LINE)
 PRINT_OK = printf "$(OK_COLOR)$@ $(OK_STRING)\n" | $(AWK_CMD) && $(PRINT_LINE)
 
-full-setup:
+full-setup: ../.git/config
 	@$(MAKE) setup-aws
 	@$(MAKE) add-patterns
 	@$(MAKE) add-allowed
