@@ -1,10 +1,6 @@
-PATTERNS=pass
-ALLOWED=@font-face{.*}\
-password\
-test\
-test-pull
-LITERALS=passwords\
-literal
+PATTERNS=
+ALLOWED=@font-face{.*}
+LITERALS=
 
 # color output
 NO_COLOR=\033[0m

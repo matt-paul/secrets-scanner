@@ -1,4 +1,4 @@
-# Git Secrets Setup
+# Git Secrets Scanner
 
 Using git-secrets(https://github.com/awslabs/git-secrets). It is currently used used to scan the git repositories for secrets.
 However, the base installation overrides preexisting git hooks and has no default patterns to scan for.
