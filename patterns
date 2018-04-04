@@ -6,4 +6,4 @@
 "(\"|')?(MAILCHIMP|mailchimp|Mailchimp)_(API|api|Api)_(KEY|key|Key)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-z]{32}(-us)(0?[1-9]|1[0-3])?(\"|')?"
 "(\"|')?(WORKABLE|workable|Workable)_(API|api|Api)_(KEY|key|Key)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-z]+(\"|')?"
 "(\"|')?(GOTOWEBINAR|gotowebinar|Gotowebinar)_(CLIENT|client|Client)_(ID|id|Id)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-zA-Z]+(\"|')?"
-"(\"|')?(GOTOWEBINAR|gotowebinar|Gotowebinar)_(PASSWORD|password|Password)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-zA-Z]{8,50}(\"|')?"
+"(\"|')?(GOTOWEBINAR|gotowebinar|Gotowebinar)_(PASSWORD|password|Password)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-zA-Z-]{8,50}(\"|')?"
