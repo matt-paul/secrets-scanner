@@ -20,13 +20,13 @@ PRINT_OK = printf "$(OK_COLOR)$@ $(OK_STRING)\n" | $(AWK_CMD) && $(PRINT_LINE)
 
 full-setup: ../.git/config
 	@$(MAKE) setup-aws
-ifdef PATTERNS
+ifneq ($(PATTERNS),)
 	@$(MAKE) add-patterns
 endif
-ifdef ALLOWED
+ifneq ($(ALLOWED),)
 	@$(MAKE) add-allowed
 endif
-ifdef LITERALS
+ifneq ($(LITERALS),)
 	@$(MAKE) add-literals
 endif
 
