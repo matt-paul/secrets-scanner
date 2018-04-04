@@ -1,6 +1,6 @@
-PATTERNS=
-ALLOWED=@font-face{.*}
-LITERALS=
+PATTERNS=$(shell cat patterns)
+ALLOWED=$(shell cat allowed)
+LITERALS=$(shell cat literals)
 
 # color output
 NO_COLOR=\033[0m
@@ -28,7 +28,7 @@ setup-aws: ../.git/config
 	@cd .. && git secrets --register-aws || echo "SETUP ALREADY DONE"
 	@$(PRINT_OK)
 	
-add-patterns: ../.git/config
+add-patterns: patterns
 ifdef PATTERNS
 	@cd .. && $(foreach var,$(PATTERNS),git secrets --add $(var)\
 	&& echo "$(var) HAS BEEN ADDED"\
@@ -36,7 +36,7 @@ ifdef PATTERNS
 	@$(PRINT_OK)
 endif
 	
-add-allowed: ../.git/config
+add-allowed: allowed
 ifdef ALLOWED
 	@cd .. && $(foreach var,$(ALLOWED),git secrets --add -a $(var)\
 	&& echo "$(var) HAS BEEN ADDED"\
@@ -44,7 +44,7 @@ ifdef ALLOWED
 	@$(PRINT_OK)
 endif
 
-add-literals: ../.git/config
+add-literals: literals
 ifdef LITERALS
 	@cd .. && $(foreach var,$(LITERALS),git secrets --add -a --literal $(var)\
 	&& echo "$(var) HAS BEEN ADDED"\

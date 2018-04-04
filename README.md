@@ -30,11 +30,11 @@ Here we are extending git-secrets to automatically setup to a predetermined spec
 
 	```make
 	scanner: ## Initialize git secrets in the scanner folder
-    	git clone git@github.com:ksunandp/secrets-scanner.git scanner
+    	git clone git@github.com:redbadger/secrets-scanner.git scanner
     	@echo ""
     	@echo "*************************************************************"
     	@echo "* Follow the instructions to get added to the setup the scanner:"
-    	@echo "* https://github.com/ksunandp/secrets-scanner/blob/master/README.md"
+    	@echo "* https://github.com/redbadger/secrets-scanner/blob/master/README.md"
     	@echo "*************************************************************"
     	@echo ""
     	@read -p "Press any key to continue."
@@ -78,4 +78,8 @@ Here we are extending git-secrets to automatically setup to a predetermined spec
 
 ## Adding patterns, allowed patterns and allowed literals
 
-These are all held within this repository, until a more dynamic approach has been implemented. Please clone, branch and request pulls.
+Please add a line to the appropriate file:
+
+* patterns - for patterns to search for
+* allowed - patterns to ignore
+* literals - literal strings to ignore
