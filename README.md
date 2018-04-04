@@ -1,8 +1,8 @@
 # Git Secrets Setup
 
-Using git-secrets(https://github.com/awslabs/git-secrets), which is used to scan the repo for secrets.
-However, the base installation overrides preexisting git hooks and has no base rules regarding secrets to scan for.
-Here we are extending git-secrets to auto setup to a predetermined specification (set here in this repo) and allow for use in other git hook modules e.g. pre-git.
+Using git-secrets(https://github.com/awslabs/git-secrets). It is currently used used to scan the git repositories for secrets.
+However, the base installation overrides preexisting git hooks and has no default patterns to scan for.
+Here we are extending git-secrets to automatically setup to a predetermined specification (set here in this repository) and allow for use in other git hook modules e.g. pre-git.
 
 
 ## Summary
@@ -33,7 +33,7 @@ Here we are extending git-secrets to auto setup to a predetermined specification
 		git clone git@github.com:ksunandp/secrets-scanner.git scanner
 		@echo ""
 		@echo "*************************************************************"
-		@echo "* Follow the instructions to get added to the blackbox admins:"
+		@echo "* Follow the instructions to get added to the setup the scanner:"
 		@echo "* https://github.com/ksunandp/secrets-scanner/blob/master/README.md"
 		@echo "*************************************************************"
 		@echo ""
