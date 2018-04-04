@@ -20,31 +20,31 @@ PRINT_OK = printf "$(OK_COLOR)$@ $(OK_STRING)\n" | $(AWK_CMD) && $(PRINT_LINE)
 
 full-setup: ../.git/config
 	@$(MAKE) setup-aws
+ifdef PATTERNS
 	@$(MAKE) add-patterns
+endif
+ifdef ALLOWED
 	@$(MAKE) add-allowed
+endif
+ifdef LITERALS
 	@$(MAKE) add-literals
+endif
 
 setup-aws: ../.git/config
 	@cd .. && git secrets --register-aws || echo "SETUP ALREADY DONE"
 	@$(PRINT_OK)
 	
 add-patterns: patterns
-ifdef PATTERNS
 	@cd .. && $(foreach var,$(PATTERNS),git secrets --add $(var);)
 	@$(PRINT_OK)
-endif
 	
 add-allowed: allowed
-ifdef ALLOWED
 	@cd .. && $(foreach var,$(ALLOWED),git secrets --add -a $(var);)
 	@$(PRINT_OK)
-endif
 
 add-literals: literals
-ifdef LITERALS
 	@cd .. && $(foreach var,$(LITERALS),git secrets --add -a --literal $(var);)
 	@$(PRINT_OK)
-endif
 
 list: ../.git/config
 	@cd .. && git secrets --list
