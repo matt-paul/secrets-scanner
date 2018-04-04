@@ -1,7 +1,7 @@
 "(\"|')?(GOOGLE|google|Google)?_?(ANALYTICS|analytics|Analytics)?_?(TRACKER|tracker|Tracker)?(\"|')?\s*(:|=>|=)\s*(\"|')?(UA|ua)\-\d{4,9}\-\d{1,4}(\"|')?"
 "(\"|')?(UA|ua)\-\d{4,9}\-\d{1,4}(\"|')?"
 "(\"|')?(INSTAGRAM|instagram|Instagram)_(ACCESS|access|Access)_(TOKEN|token|Token)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-z.]+(\"|')?"
-"(\"|')?(TWITTER|twitter|Twitter)_(SECRET|secret|Secret|KEY|key|Key)(\"|')\s*(:|=>|=)\s*(\"|')?[0-9a-zA-Z]+(\"|')?"
+"(\"|')?(TWITTER|twitter|Twitter)_(SECRET|secret|Secret|KEY|key|Key)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-zA-Z]+(\"|')?"
 "(\"|')?(SECRET|secret|Secret)_(ENCRYPTION|encryption|Encryption)_(KEY|key|Key)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-z]+(\"|')?"
 "(\"|')?(MAILCHIMP|mailchimp|Mailchimp)_(API|api|Api)_(KEY|key|Key)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-z]{32}(-us)(0?[1-9]|1[0-3])?(\"|')?"
 "(\"|')?(WORKABLE|workable|Workable)_(API|api|Api)_(KEY|key|Key)(\"|')?\s*(:|=>|=)\s*(\"|')?[0-9a-z]+(\"|')?"
