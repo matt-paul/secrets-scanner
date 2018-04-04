@@ -30,21 +30,21 @@ Here we are extending git-secrets to automatically setup to a predetermined spec
 
 	```make
 	scanner: ## Initialize git secrets in the scanner folder
-		git clone git@github.com:ksunandp/secrets-scanner.git scanner
-		@echo ""
-		@echo "*************************************************************"
-		@echo "* Follow the instructions to get added to the setup the scanner:"
-		@echo "* https://github.com/ksunandp/secrets-scanner/blob/master/README.md"
-		@echo "*************************************************************"
-		@echo ""
-		@read -p "Press any key to continue."
+            git clone git@github.com:ksunandp/secrets-scanner.git scanner
+            @echo ""
+            @echo "*************************************************************"
+            @echo "* Follow the instructions to get added to the setup the scanner:"
+            @echo "* https://github.com/ksunandp/secrets-scanner/blob/master/README.md"
+            @echo "*************************************************************"
+            @echo ""
+            @read -p "Press any key to continue."
 
     setup-scanner: ## Setup git secrets with stored configuration
-	    @cd secrets-scan && git pull
-	    @cd secrets-scan && $(MAKE) full-setup
+            @cd secrets-scan && git pull
+            @cd secrets-scan && $(MAKE) full-setup
 
     scan-secrets: ## Scan for secrets
-        @git secrets --scan
+            @git secrets --scan
 	```
 
 3.	Add the folder `scanner` to your `.gitignore`.
