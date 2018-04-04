@@ -30,25 +30,19 @@ setup-aws: ../.git/config
 	
 add-patterns: patterns
 ifdef PATTERNS
-	@cd .. && $(foreach var,$(PATTERNS),git secrets --add $(var)\
-	&& echo "$(var) HAS BEEN ADDED"\
-	|| echo "$(var) ALREADY ADDED";)
+	@cd .. && $(foreach var,$(PATTERNS),git secrets --add $(var);)
 	@$(PRINT_OK)
 endif
 	
 add-allowed: allowed
 ifdef ALLOWED
-	@cd .. && $(foreach var,$(ALLOWED),git secrets --add -a $(var)\
-	&& echo "$(var) HAS BEEN ADDED"\
-	|| echo "$(var) ALREADY ADDED";)
+	@cd .. && $(foreach var,$(ALLOWED),git secrets --add -a $(var);)
 	@$(PRINT_OK)
 endif
 
 add-literals: literals
 ifdef LITERALS
-	@cd .. && $(foreach var,$(LITERALS),git secrets --add -a --literal $(var)\
-	&& echo "$(var) HAS BEEN ADDED"\
-	|| echo "$(var) ALREADY ADDED";)
+	@cd .. && $(foreach var,$(LITERALS),git secrets --add -a --literal $(var);)
 	@$(PRINT_OK)
 endif
 
