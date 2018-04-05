@@ -39,11 +39,11 @@ Here we are extending git-secrets to automatically setup to a predetermined spec
     	@echo ""
     	@read -p "Press any key to continue."
 
-    setup-scanner: ## Setup git secrets with stored configuration
+    setup-scanner: scanner ## Setup git secrets with stored configuration
     	@cd scanner && git pull
     	@cd scanner && $(MAKE) full-setup
 
-    scan-secrets: ## Scan for secrets
+    scan-secrets: scanner ## Scan for secrets
     	@git secrets --scan
 	```
 
