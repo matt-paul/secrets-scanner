@@ -1,1 +1,2 @@
 @font-face{.*}
+"SECRET_ENCRYPTION_KEY\s*(:|=>|=)\s*(\"|')?(secret|SECRET|Secret)(\"|')?"
