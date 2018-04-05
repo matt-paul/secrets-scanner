@@ -83,3 +83,5 @@ Please add a line to the appropriate file:
 * patterns - for patterns to search for
 * allowed - patterns to ignore
 * literals - literal strings to ignore
+
+OR to add project based (which will not be stored here) follow instructions on https://github.com/awslabs/git-secrets
